@@ -1,8 +1,15 @@
 <h1> Create a new post! </h1>
 
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end%>
+  </ul>
+<% end%>
+
 <%= form_for @post do |f| %>
-    <%= f.label :user_id %>
-    <p> <%= f.collection_select :user_id, User.all, :id, :username %> </p>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
     <br>
     <br>
     Title: <%= f.text_field :title %><br />

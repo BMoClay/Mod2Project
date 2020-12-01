@@ -14,10 +14,11 @@ class SessionsController < ApplicationController
         
         if user && user.authenticate(params[:session][:password])
             cookies[:user_id] = user.id
-            redirect_to users_path
+            redirect_to posts_path
         else
             flash[:errors] = "Username or password doesnt match"
             redirect_to new_login_path
+        end
     end
 
 end
