@@ -12,26 +12,35 @@ class PostsController < ApplicationController
         @post = Post.new
     end
 
-#altered version of create method - testing out something
     def create
         post = Post.create(post_params)
+
         if post.valid?
+            cookies[:user_id] = user.id
             redirect_to post_path(post)
         else
-            flash[:post_errors] = @post.errors.full_messages
+            flash[:errors] = post.errors.full_messages
             redirect_to new_post_path
         end
     end
 
-    # def create
-    #     @post = Post.new(post_params)
-    #     if @post.save
-    #         redirect_to @post.user
-    #     else
-    #         flash[:errors] = @post.errors.full_messages
-    #         render 'new'
-    #     end
-    # end
+    def edit
+        @post = Post.find(params[:id])
+    end
+
+    def update
+        @post = Post.find(params[:id])
+        @post.update(post_params)
+
+        redirect_to post_path(@post)
+    end
+
+    def destroy
+        @post = Post.find(params[:id])
+        @post.destroy
+
+        redirect_to posts_path
+    end
 
     private
 
