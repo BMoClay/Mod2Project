@@ -6,6 +6,8 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        @comment = Comment.find(params[:id])
+        @comments = Comment.all
     end
 
     def new
@@ -16,10 +18,10 @@ class PostsController < ApplicationController
         post = Post.create(post_params)
 
         if post.valid?
-            cookies[:user_id] = user.id
-            redirect_to post_path(post)
+            # cookies[:user_id] = user.id
+            redirect_to posts_path(post)
         else
-            flash[:errors] = post.errors.full_messages
+            flash[:post_errors] = post.errors.full_messages
             redirect_to new_post_path
         end
     end

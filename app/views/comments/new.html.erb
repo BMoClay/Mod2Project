@@ -1,0 +1,22 @@
+<h1> Create a new comment! </h1>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end%>
+  </ul>
+<% end%>
+
+<%= form_for @comment do |f| %>
+    <%= f.hidden_field :user_id, :value => @current_user %>
+    <br>
+    <br>
+    <%= f.hidden_field :post_id, :value => @current_post %>
+    <br>
+    <br>
+    Comment: <%= f.text_field :comment %><br />
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>

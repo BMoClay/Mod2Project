@@ -5,22 +5,20 @@
 <br>
 <h2> Content: <%= @post.content %> </h2>
 <br>
-<br>
-<h2> Comments: <%= @post.comments.each do |c| %> </h2><br>
-<h2><%= c.username %> </h2>
-<h2><%= c.comment %> </h2>
-<br>
-<br>
-<% end %>
-
 <h2> Comment on this post </h2>
-  <%= form_for @post do |f| %>
-    <%= f.hidden_field :user_id, :value => @current_user.id %>
-    <%= f.hidden_field :post_id, :value => @current_user.id %>
+  <%= form_for @comment do |f| %>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+    <%= f.hidden_field :user_id, :value => @current_user %>
     <br>
     <br>
-    <%= f.text_area :comment %><br />
+    <%= f.text_area :comment %>
     <br>
     <br>
     <%= f.submit %>
+<% end %> 
+
+<h2> Comments </h2>
+  <p> <% @comments.each do |f| %> </p>
+    <h3> <%= f.user.username %></h3>
+  <%= f.comment %>
 <% end %>
