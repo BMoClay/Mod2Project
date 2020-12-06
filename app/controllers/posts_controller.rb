@@ -6,8 +6,10 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        @comment = Comment.find(params[:id])
-        @comments = Comment.all
+        @comment = Comment.new
+        # @post.comments
+        # [].map
+        # "".length
     end
 
     def new
@@ -19,7 +21,7 @@ class PostsController < ApplicationController
 
         if post.valid?
             # cookies[:user_id] = user.id
-            redirect_to posts_path(post)
+            redirect_to post_path(post)
         else
             flash[:post_errors] = post.errors.full_messages
             redirect_to new_post_path

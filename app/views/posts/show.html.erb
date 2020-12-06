@@ -8,7 +8,7 @@
 <h2> Comment on this post </h2>
   <%= form_for @comment do |f| %>
     <%= f.hidden_field :post_id, :value => @post.id %>
-    <%= f.hidden_field :user_id, :value => @current_user %>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
     <br>
     <br>
     <%= f.text_area :comment %>
@@ -18,7 +18,7 @@
 <% end %> 
 
 <h2> Comments </h2>
-  <p> <% @comments.each do |f| %> </p>
-    <h3> <%= f.user.username %></h3>
-  <%= f.comment %>
+  <p> <% @post.comments.each do |comment| %> </p>
+    <h3> <%= comment.user.username %></h3>
+  <%= comment.comment %>
 <% end %>
