@@ -7,10 +7,9 @@
     <% end %>
   </ul>
 <% end %>
-
+<% if @current_user %>
 <%= form_for @post do |f| %>
-<%= f.label :user %>
-  <%= f.collection_select :user_id, User.all, :id, :username, prompt: true %>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
     <br>
     <br>
     Title: <%= f.text_field :title %><br />
@@ -18,4 +17,7 @@
     <br>
     <p> Content: <%= f.text_area :content %><br /> </p> 
     <%= f.submit %>
+<% end %>
+  <% else %>
+    <p>Please log in to create a post</p>
 <% end %>
