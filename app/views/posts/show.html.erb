@@ -1,4 +1,4 @@
-<h1> Post Page </h1>
+ <h1> Post Page </h1>
 <br>
 <h2> Title: <%= @post.title %> </h2>
 <h2> Content: <%= @post.content %> </h2>
@@ -14,9 +14,12 @@
     <br>
     <%= f.submit 'Post Comment' %>
 <% end %> 
+<% else %>
+  <p>Please sign up if you want to comment on this post</p>
+<% end %>
 
 <h2> Comments </h2>
   <p> <% @post.comments.each do |comment| %> </p>
     <h3> <%= comment.user.username %></h3>
   <%= comment.comment %>
-<% end %>
+<% end %> 
