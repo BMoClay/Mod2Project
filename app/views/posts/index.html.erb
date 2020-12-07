@@ -1,7 +1,13 @@
 <h1> List of all posts </h1>
-
+<br>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <% end %>
+    <% end %>
+    <br>
 <h2> <% @posts.each do |t| %> </h2>
     <h2> <%= link_to t.title, post_path(t) %> </h2>
+    <p><%= t.content %></p><br>
 <% end %>
 
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'posts/new', to: 'posts#new', as: 'new_post'
   
   resources :posts
-  resources :comments, only: [:new, :show, :create, :edit, :update, :destroy]
+  resources :comments
   resources :users, only: [:index, :new, :show, :create, :destroy]
 
   delete "/sessions/logout", to: 'sessions#logout', as: 'logout'
