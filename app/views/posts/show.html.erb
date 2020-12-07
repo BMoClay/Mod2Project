@@ -4,9 +4,8 @@
 <h2> Content: <%= @post.content %> </h2>
 <h2> Author: <%= link_to @post.user.username, user_path(@post.user_id) %> </h2>
 <br>
-<%= link_to 'edit/delete', edit_post_path(@post)%>
-<br>
-<% if @current_user %>
+<%= link_to "Edit/Delete", edit_post_path(@post) %><br>
+
 <h3> Comment on this post: </h3>
   <%= form_for @comment do |f| %>
     <%= f.hidden_field :post_id, :value => @post.id %>
