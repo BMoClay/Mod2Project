@@ -2,6 +2,7 @@
 <br>
 <h2> Title: <%= @post.title %> </h2>
 <h2> Content: <%= @post.content %> </h2>
+<h2> Artist: <%= @post.user.username %> </h2>
 <br>
 <h3> Comment on this post: </h3>
   <%= form_for @comment do |f| %>
