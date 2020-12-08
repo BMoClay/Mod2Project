@@ -1,3 +1,4 @@
+<br>
 <h1> Create a new post! </h1>
 
 <% if flash[:post_errors] %>
@@ -7,17 +8,15 @@
     <% end %>
   </ul>
 <% end %>
+<ul class="nav">
 <% if @current_user %>
 <%= form_for @post do |f| %>
     <%= f.hidden_field :user_id, :value => @current_user.id %>
-    <br>
-    <br>
-    Title: <%= f.text_field :title %><br />
-    <br>
-    <br>
-    <p> Content: <%= f.text_area :content %><br /> </p> 
+    <p>Title: <%= f.text_field :title %></p>
+    <p> Content: <%= f.text_area :content %></p> 
     <%= f.submit %>
 <% end %>
   <% else %>
     <p>Please log in to create a post</p>
 <% end %>
+</ul class="nav">

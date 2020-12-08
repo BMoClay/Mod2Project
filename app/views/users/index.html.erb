@@ -1,5 +1,7 @@
+<br>
 <h1> List of all Users </h1>
-
+<ul class="nav">
 <h2> <% @users.each do |t| %> </h2>
     <h2> <%= link_to t.username, user_path(t) %> </h2>
 <% end %>
+</ul class="nav">
