@@ -1,0 +1,12 @@
+
+<br>
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors] do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h1>Delete User</h1>
+<%= button_to "Delete #{@user.username}", user_path(@user), method: :delete %><br>
