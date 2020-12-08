@@ -3,6 +3,7 @@
 <ul class="page">
 <h2> <% @posts.each do |t| %> </h2>
     <h2> <%= link_to t.title, post_path(t) %> </h2>
+    <h3> By: <%= t.user.username %></h3>
     <%= t.content %><br><br><br>
 <% end %>
 </ul class="page">
