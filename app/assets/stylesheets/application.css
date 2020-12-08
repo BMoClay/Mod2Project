@@ -42,7 +42,12 @@
    text-decoration: none;
 }
 
+.page h3 a{
+    text-decoration: none;
+}
+
 .page {
+    text-decoration: none;
     line-height: 20px;
     height: 40px;
 }
