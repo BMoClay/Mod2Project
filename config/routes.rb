@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments
   resources :users
+  
 
   delete "/sessions/logout", to: 'sessions#logout', as: 'logout'
   get "/sessions/new", to: 'sessions#new', as: 'new_login'
