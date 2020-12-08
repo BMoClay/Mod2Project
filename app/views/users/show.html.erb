@@ -1,8 +1,12 @@
-<h1> <%= @user.username %> </h1><br>
-<h2>Posts</h2>
+<br>
+<h1> <%= @user.username %> </h1>
+<ul class="z">
+<h2>Posts:</h2>
 <% @user.posts. each do |post| %>
-<%= post.title %><br>
+<h3><%= post.title %></h3>
 <%= post.content %><br>
 <br>
 <% end %>
+<br>
 <%= link_to 'Back', users_path %>
+</ul class="z">

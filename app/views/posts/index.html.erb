@@ -1,8 +1,11 @@
-<h1> List of all posts </h1>
 <br>
+<h1> All the Posts </h1><br>
+<ul class="page">
 <h2> <% @posts.each do |t| %> </h2>
     <h2> <%= link_to t.title, post_path(t) %> </h2>
-    <p><%= t.content %></p><br>
+    <%= t.content %><br><br><br>
 <% end %>
+</ul class="page">
 
 
+ 

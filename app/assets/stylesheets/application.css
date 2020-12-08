@@ -12,4 +12,46 @@
  *
  *= require_tree .
  *= require_self
+ 
  */
+/* * {
+    border: 1px solid magenta;
+} */
+.nav {
+    line-height: 40px;
+    height: 40px;
+}
+
+ .nav li{
+     display: inline-block;
+     padding: 0px 25px 10px 10px;
+   
+ }
+
+ .nav li a{
+    text-decoration: none;
+    color: hsl(271, 81%, 43%);
+ }
+
+ .nav h2 a{
+    text-decoration: none;
+    color: hsl(271, 81%, 43%);
+}
+
+.nav p a{
+   text-decoration: none;
+}
+
+.page {
+    line-height: 20px;
+    height: 40px;
+}
+
+.page h2 a{
+    text-decoration: none;
+    color: hsl(271, 81%, 43%);
+}
+
+.page p a{
+   text-decoration: none;
+}
