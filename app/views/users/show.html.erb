@@ -1,12 +1,13 @@
 <br>
 <h1> <%= @user.username %> </h1>
-<ul class="z">
-<h2>Posts:</h2>
+<ul class="page">
+<h2>Posts:</h2><br>
 <% @user.posts. each do |post| %>
-<h3><%= post.title %></h3>
+<h2> <%= link_to post.title, post_path(post) %> </h2>
+
 <%= post.content %><br>
 <br>
 <% end %>
 <br>
 <%= link_to 'Back', users_path %>
-</ul class="z">
+</ul class="page">

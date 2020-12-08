@@ -7,7 +7,7 @@
 <% if @current_user %>
 <%= link_to 'edit/delete post', edit_post_path(@post)%>
 <% end %> 
-
+<br>
 <% if @current_user %>
 <h3> Comment on this post </h3>
   <%= form_for @comment do |f| %>
