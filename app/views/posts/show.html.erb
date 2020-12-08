@@ -20,3 +20,10 @@
 <% else %>
   <p>Please sign up if you want to comment on this post</p>
 <% end %>
+
+<h2> Comments </h2>
+  <p> <% @post.comments.each do |comment| %> </p>
+  <%= comment.comment %>
+  <h4>-<%= comment.user.username %><h4>
+<% end %> 
+</ul class="page">
